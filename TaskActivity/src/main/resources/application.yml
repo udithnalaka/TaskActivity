@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: TaskActivity
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-udith-nalaka.au.auth0.com/
+          audiences: https://tasklistapi
