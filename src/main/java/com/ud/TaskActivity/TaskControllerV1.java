@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +32,8 @@ public class TaskControllerV1 {
     })
     @PostMapping("/task")
     @PreAuthorize("hasAuthority('SCOPE_updatetask')")
-    public String updateTask() {
-        return "Access Granted: Update a Task";
+    public ResponseEntity<Task> updateTask() {
+        return ResponseEntity.ok(new Task("1002", "Study Python", "Study Python for AI",
+                "Udith", "u@u.ccom"));
     }
 }
